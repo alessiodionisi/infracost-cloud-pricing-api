@@ -107,6 +107,11 @@ async function convertCurrencies(prices: Price[]) {
       const usd = await currency.convert('CNY', 'USD', Number(price.CNY));
       price.USD = usd.toString();
     }
+
+    if (price.USD == null && price.EUR != null) {
+      const usd = await currency.convert('EUR', 'USD', Number(price.EUR));
+      price.USD = usd.toString();
+    }
   }
 }
 

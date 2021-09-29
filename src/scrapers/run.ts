@@ -5,6 +5,7 @@ import awsSpot from './awsSpot';
 import azureRetail from './azureRetail';
 import gcpCatalog from './gcpCatalog';
 import gcpMachineTypes from './gcpMachineTypes';
+import scaleway from './scaleway';
 
 interface ScraperConfig {
   vendor: string;
@@ -24,12 +25,15 @@ const Scrapers = {
     catalog: gcpCatalog.scrape,
     machineTypes: gcpMachineTypes.scrape,
   },
+  scaleway: {
+    all: scaleway.scrape,
+  },
 };
 
 async function run(): Promise<void> {
   const { argv } = yargs
     .usage(
-      'Usage: $0 --only=[aws:bulk,aws:spot,azure:retail,gcp:catalog,gcp:machineTypes]'
+      'Usage: $0 --only=[aws:bulk,aws:spot,azure:retail,gcp:catalog,gcp:machineTypes,scaleway:all]'
     )
     .options({
       only: { type: 'string' },

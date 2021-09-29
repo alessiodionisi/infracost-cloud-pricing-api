@@ -1,0 +1,32 @@
+# Get price of a DEV1-S instance in the fr-par-1 region
+
+query {
+  products(
+    filter: {
+      vendorName: "scaleway"
+      service: "Instance"
+      productFamily: "Compute"
+      region: "fr-par-1"
+      attributeFilters: [{ key: "type", value: "DEV1-S" }]
+    }
+  ) {
+    prices {
+      EUR
+    }
+  }
+}
+
+# Response:
+# {
+#   "data": {
+#     "products": [
+#       {
+#         "prices": [
+#           {
+#             "EUR": "0.008000001"
+#           }
+#         ]
+#       }
+#     ]
+#   }
+# }
