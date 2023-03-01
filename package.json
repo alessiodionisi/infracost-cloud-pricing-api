@@ -86,7 +86,7 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-import": "^2.21.1",
-    "graphql-parse-resolve-info": "^4.9.0",
+    "graphql-parse-resolve-info": "^4.13.0",
     "graphql-subscriptions": "^1.1.0",
     "nodemon": "^2.0.12",
     "ts-node": "^9.0.0",
